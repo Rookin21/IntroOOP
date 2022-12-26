@@ -17,7 +17,7 @@ public class BankAccount
     /// <summary>
     /// Чтение и запись приватных полей
     /// </summary>
-    public int Num { get => _Num; set => _Num = value; }
+    public int Num { get => _Num;}
     public decimal Balance { get => _Balance; set => _Balance = value; }
     public Card TypeCard { get => _TypeCard; set => _TypeCard = value; }
 
@@ -27,9 +27,10 @@ public class BankAccount
     /// <param name="num">Номер счета</param>
     /// <param name="balance">Баланс</param>
     /// <param name="typeCard">Тип банковского счета</param>
-    public BankAccount(int num, decimal balance, Card typeCard)
+    public BankAccount(decimal balance, Card typeCard)
     {
-        _Num = num;
+        Random RND = new Random();
+        _Num = RND.Next(100);
         _Balance = balance;
         _TypeCard = typeCard;
     }
