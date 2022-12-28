@@ -34,4 +34,25 @@ public class BankAccount
         _Balance = balance;
         _TypeCard = typeCard;
     }
+
+    public decimal Deposit(decimal amount)
+    {
+        _Balance += amount;
+         return _Balance;
+
+    }
+
+    public decimal Withdraw(decimal amount)
+    {
+        if (amount > _Balance)
+        {
+            Console.WriteLine("Запрашиваемая сумма превышает остаток на счете {0}", _Num);
+        }
+        else
+        {
+            _Balance-= amount;
+        }
+
+        return _Balance;
+    }
 }
