@@ -28,4 +28,10 @@ Console.WriteLine("\n№ счета: {0} \nБаланс: {1} $ \nТип банк
 Console.WriteLine("\n№ счета: {0} \nБаланс: {1} $ \nТип банковского счета: {2}", bankAccount2.Num, bankAccount2.Balance, bankAccount2.TypeCard);
 Console.WriteLine("\n№ счета: {0} \nБаланс: {1} $ \nТип банковского счета: {2}", bankAccount3.Num, bankAccount3.Balance, bankAccount3.TypeCard);
 
+Console.WriteLine("\nВыполнен перевод со счета №{0} на счет №{1}", bankAccount1.Num, bankAccount2.Num);
+bankAccount1.Exchange(100.000M, bankAccount1, bankAccount2);
+
+Console.WriteLine("\n№ счета: {0} \nБаланс: {1} $ \nТип банковского счета: {2}", bankAccount1.Num, bankAccount1.Balance, bankAccount1.TypeCard);
+Console.WriteLine("\n№ счета: {0} \nБаланс: {1} $ \nТип банковского счета: {2}", bankAccount2.Num, bankAccount2.Balance, bankAccount2.TypeCard);
+
 Console.ReadKey(true);
