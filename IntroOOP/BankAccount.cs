@@ -34,12 +34,10 @@ public class BankAccount
         _Balance = balance;
         _TypeCard = typeCard;
     }
-
     public decimal Deposit(decimal amount)
     {
         _Balance += amount;
          return _Balance;
-
     }
 
     public decimal Withdraw(decimal amount)
@@ -54,5 +52,11 @@ public class BankAccount
         }
 
         return _Balance;
+    }
+
+    public void Exchange(decimal amount, BankAccount firstAccount, BankAccount secondAccount)
+    {
+        firstAccount.Withdraw(amount);
+        secondAccount.Deposit(amount);
     }
 }
