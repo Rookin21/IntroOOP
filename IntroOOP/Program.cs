@@ -64,7 +64,6 @@ namespace IntroOOP
 
             // Выше тоже самое, это упрощенная
             GetFIOs(__NameFileName, out var last_names, out var first_names, out var patronymics, out var symbols, out var mails);
-            FileInfo Result =  CreateStudents(__NameFileName, __StudentsCount, mails);
 
             Console.ReadKey(true);
 
