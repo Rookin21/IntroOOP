@@ -64,6 +64,7 @@ namespace IntroOOP
 
             // Выше тоже самое, это упрощенная
             GetFIOs(__NameFileName, out var last_names, out var first_names, out var patronymics, out var symbols, out var mails);
+            CreateStudents(__CreateStudents, __StudentsCount, mails);
 
             Console.ReadKey(true);
 
@@ -110,9 +111,10 @@ namespace IntroOOP
             Patronmics = patronymics.ToArray();
             Symbols = symbols.ToArray();
             Mails = mails.ToArray();
+
         }
 
-        private static FileInfo CreateStudents(
+        private static void CreateStudents(
             string StudentsFilePath, 
             int Count,       
             string[] Mails)
@@ -120,14 +122,9 @@ namespace IntroOOP
             using (var file= File.CreateText(StudentsFilePath))
             for (var i = 0; i < Count; i++)
             {
-                var student = new Student
-                {
-                    Mail = Mails[i],
-                };
-
-                file.WriteLine(string.Join("\n", student.Mail));
+                file.WriteLine(string.Join("\n", Mails));
             }
-            return new FileInfo(StudentsFilePath);
+            
         }
     }
 }
